@@ -2,6 +2,113 @@
 
 Este documento detalla la estructura de directorios y archivos del proyecto `charmss-customer`, una aplicación ReactJS con TypeScript, diseñada con una arquitectura limpia para ser escalable, modular y mantenible.
 
+## Diagrama de Estructura (PlantUML)
+
+```plantuml
+@startuml
+
+skinparam folder {
+    BackgroundColor #222222
+    BorderColor #66CCFF
+    FontColor White
+}
+
+skinparam file {
+    BackgroundColor #444444
+    BorderColor #99FF99
+    FontColor White
+}
+
+folder "charmss-customer" as root {
+    folder "public" as public {
+        file "index.html"
+        file "manifest.json"
+        file "service-worker.js"
+        file "vite.svg"
+    }
+
+    folder "src" as src {
+        folder "assets" as assets {
+            folder "images" as images {
+                file ".gitkeep"
+            }
+            folder "icons" as icons {
+                file ".gitkeep"
+            }
+            file "react.svg"
+        }
+
+        folder "components" as components {
+            folder "common"
+            folder "layout"
+            folder "specific"
+        }
+
+        folder "config"
+        folder "hooks"
+
+        folder "layouts" as layouts {
+            file "AuthLayout.tsx"
+            file "MainLayout.tsx"
+        }
+
+        folder "pages" as pages {
+            folder "auth" as auth_pages {
+                file "LoginPage.tsx"
+                file "RegisterPage.tsx"
+            }
+            folder "home" as home_pages {
+                file "HomePage.tsx"
+            }
+            folder "profile" as profile_pages {
+                file "ProfilePage.tsx"
+            }
+        }
+
+        folder "services" as services {
+            folder "api" as api_services {
+                file "axiosInstance.ts"
+            }
+            folder "auth"
+        }
+
+        folder "store"
+
+        folder "styles" as styles {
+            file "index.css"
+        }
+
+        folder "types"
+        folder "utils"
+
+        file "App.tsx"
+        file "main.tsx"
+        file "routes.tsx"
+        file "App.css"
+        file "vite-env.d.ts"
+    }
+
+    folder "docs" as docs {
+        file "PROJECT_STRUCTURE.md"
+    }
+
+    folder "node_modules"
+    folder "dist"
+
+    file ".env"
+    file ".gitignore"
+    file "package.json"
+    file "package-lock.json"
+    file "tsconfig.json"
+    file "tsconfig.app.json"
+    file "tsconfig.node.json"
+    file "vite.config.ts"
+    file "README.md"
+    file "eslint.config.js"
+}
+@enduml
+```
+
 ## Árbol de Directorios
 
 ```
@@ -197,5 +304,8 @@ charmss-customer/
 *   `README.md`:
     *   **Propósito**: Un archivo de documentación general del proyecto. Sirve como una introducción rápida al proyecto, incluyendo cómo configurarlo, ejecutarlo y contribuir a él.
     *   **Tareas Correspondientes**: Mantenerlo actualizado con información relevante sobre el proyecto, instrucciones de instalación, scripts de ejecución, etc.
+*   `eslint.config.js`:
+    *   **Propósito**: Archivo de configuración para ESLint, una herramienta de linting que ayuda a mantener la calidad del código y a aplicar un estilo consistente.
+    *   **Tareas Correspondientes**: Definir reglas de linting, plugins y configuraciones para el proyecto.
 
 ---
