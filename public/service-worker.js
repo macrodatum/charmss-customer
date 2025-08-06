@@ -1,0 +1,1 @@
+// Service Worker content will go here
